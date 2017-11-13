@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PongDev</string>
+    <string name="player_1_TP">Player 1 name</string>
+    <string name="player_2_TP">Player 2 name</string>
+    <string name="teamname_TP">Team name</string>
+    <string name="addteam">Add team</string>
+    <string name="start_tournament">Start tournament</string>
+    <string name="full_tournament">Tournament full</string>
+    <string name="match">Current match</string>
+    <string name="versus">VS</string>
+    <string name="score">Score</string>
+    <string name="next_game">Next game</string>
+</resources>
