@@ -2,6 +2,7 @@ package com.pongdev.pongdev;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,18 +29,21 @@ public class MatchScreen extends AppCompatActivity {
         nextMatchBTN = findViewById(R.id.nextGameBTN);
 
 
-
-        String team1 = t.getCurrentRound().getNextMatch().getTeam1().getName();
-        String team2 = t.getCurrentRound().getNextMatch().getTeam2().getName();
+        Match nextMatch = t.getCurrentRound().getNextMatch();
+        String team1 = nextMatch.getTeam1().getName(); //HER
+        String team2 = nextMatch.getTeam2().getName();
 
         teamOneBTN.setText(team1);
         teamTwoBTN.setText(team2);
 
+
+
         nextMatchBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String team1 = t.getCurrentRound().getNextMatch().getTeam1().getName();
-                String team2 = t.getCurrentRound().getNextMatch().getTeam2().getName();
+                Match nextMatch = t.getCurrentRound().getNextMatch();
+                String team1 = nextMatch.getTeam1().getName(); //HER
+                String team2 = nextMatch.getTeam2().getName();
                 teamOneBTN.setText(team1);
                 teamTwoBTN.setText(team2);
             }
@@ -53,6 +57,7 @@ public class MatchScreen extends AppCompatActivity {
             }
         });
     }
+
 
     private void confirmWinnerBox(final Team team){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -75,5 +80,14 @@ public class MatchScreen extends AppCompatActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void showTournamentTre(){
+        Intent intent = new Intent(this, MatchScreen.class);
+        intent.putExtra("RoundOne", this.t.getRound(1).getAllMatches());
+        intent.putExtra("RoundTwo", this.t.getRound(2).getAllMatches());
+        startActivity(intent);
+
+
     }
 }

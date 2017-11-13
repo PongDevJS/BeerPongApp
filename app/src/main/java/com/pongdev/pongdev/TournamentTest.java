@@ -58,7 +58,7 @@ public class TournamentTest {
     }
 
     public Round getRound(int r) {
-        return this.rounds.get(r);
+        return this.rounds.get(r - 1);
     }
 
 

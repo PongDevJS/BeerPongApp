@@ -1,5 +1,7 @@
 package com.pongdev.pongdev;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 /**
@@ -41,6 +43,8 @@ public class Round {
     }
 
     public Match getNextMatch(){
+        Log.d("Current match", String.valueOf(currentMatch));
+        Log.d("Matches size", String.valueOf(matches.size()));
         Match returnMatch = matches.get(currentMatch);
         currentMatch++;
         return returnMatch;

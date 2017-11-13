@@ -26,7 +26,8 @@
                 android:value=".StartScreen" />
             >
         </activity>
-        <activity android:name=".MatchScreen"></activity>
+        <activity android:name=".MatchScreen" />
+        <activity android:name=".Tree3"></activity>
     </application>
 
 </manifest>
